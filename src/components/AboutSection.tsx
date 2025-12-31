@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Cloud, Database, Layers } from "lucide-react";
+import { Code2, Cloud, Database, Building2 } from "lucide-react";
+import profileImage from "@/assets/radek-profile.jpg";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -9,8 +10,8 @@ const AboutSection = () => {
 
   const highlights = [
     { icon: Code2, value: "10+", label: "Years Experience" },
-    { icon: Layers, value: "50+", label: "Projects Delivered" },
-    { icon: Cloud, value: "AWS", label: "Certified" },
+    { icon: Building2, value: "GE", label: "Healthcare" },
+    { icon: Cloud, value: "AWS", label: "Cloud Expert" },
     { icon: Database, value: "100M+", label: "Records Processed" },
   ];
 
@@ -28,39 +29,15 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="aspect-square rounded-3xl glass glass-border p-8 relative overflow-hidden">
-              {/* Code visualization */}
-              <div className="absolute inset-0 opacity-20">
-                <pre className="text-xs text-primary font-mono p-4 overflow-hidden">
-{`@RestController
-@RequestMapping("/api/v1")
-public class ServiceController {
-    
-    @Autowired
-    private ServiceFacade facade;
-    
-    @GetMapping("/health")
-    public ResponseEntity<Health> check() {
-        return ResponseEntity.ok(
-            facade.getHealthStatus()
-        );
-    }
-    
-    @PostMapping("/process")
-    @Async
-    public CompletableFuture<Result> 
-        process(@RequestBody Request req) {
-        return facade
-            .processAsync(req)
-            .thenApply(this::transform);
-    }
-}`}
-                </pre>
-              </div>
-              
-              {/* Central avatar/icon */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-primary flex items-center justify-center shadow-glow">
-                  <Code2 className="w-16 h-16 text-primary-foreground" />
+              {/* Profile Image */}
+              <div className="absolute inset-0 flex items-center justify-center p-8">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                  <img 
+                    src={profileImage} 
+                    alt="Radek Witek" 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 </div>
               </div>
               
@@ -68,16 +45,30 @@ public class ServiceController {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute top-8 right-8 px-3 py-1.5 glass glass-border rounded-full text-sm"
+                className="absolute top-8 right-8 px-3 py-1.5 glass glass-border rounded-full text-sm z-10"
               >
                 ☕ Java 17+
               </motion.div>
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 5, repeat: Infinity }}
-                className="absolute bottom-8 left-8 px-3 py-1.5 glass glass-border rounded-full text-sm"
+                className="absolute bottom-8 left-8 px-3 py-1.5 glass glass-border rounded-full text-sm z-10"
               >
                 🐍 Python 3.11
+              </motion.div>
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, delay: 0.5 }}
+                className="absolute top-8 left-8 px-3 py-1.5 glass glass-border rounded-full text-sm z-10"
+              >
+                🐳 Docker
+              </motion.div>
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, delay: 1 }}
+                className="absolute bottom-8 right-8 px-3 py-1.5 glass glass-border rounded-full text-sm z-10"
+              >
+                ☁️ AWS
               </motion.div>
             </div>
           </motion.div>
@@ -106,15 +97,16 @@ public class ServiceController {
               className="space-y-6 text-muted-foreground leading-relaxed"
             >
               <p>
-                With over a decade in software engineering, I specialize in building 
-                robust, scalable backend systems. From designing microservices architectures 
-                to implementing cloud-native solutions on AWS, I bring a pragmatic approach 
-                to solving complex technical challenges.
+                Sr Staff Software Engineer at GE Healthcare with over a decade of experience 
+                building robust, scalable backend systems. Previously at Motorola Solutions, 
+                I specialize in designing microservices architectures and implementing 
+                cloud-native solutions on AWS.
               </p>
               <p>
                 My core expertise lies in Java Spring ecosystem and Python FastAPI for 
-                high-performance APIs. I'm passionate about clean code, automated testing, 
-                and DevOps practices that enable teams to ship with confidence.
+                high-performance APIs. I'm passionate about software architecture, 
+                PostgreSQL optimization, containerization with Docker, and DevOps practices 
+                that enable teams to ship with confidence on Linux environments.
               </p>
             </motion.div>
 
