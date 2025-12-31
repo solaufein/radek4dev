@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <footer className="py-8 px-6 border-t border-border">
+    <footer className="py-8 px-6 border-t border-border/50">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p className="font-serif text-xl text-foreground">
-          Alexandra<span className="text-primary">.</span>
+        <p className="text-xl font-semibold text-foreground">
+          dev<span className="text-primary">.</span>
         </p>
-        <p className="font-sans text-sm text-muted-foreground">
-          © {new Date().getFullYear()} All rights reserved.
+        <p className="text-sm text-muted-foreground">
+          © {new Date().getFullYear()} All rights reserved. Built with passion.
         </p>
       </div>
     </footer>

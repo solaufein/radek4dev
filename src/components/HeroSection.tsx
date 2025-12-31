@@ -1,45 +1,123 @@
-import { ArrowDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { ChevronDown, Terminal } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center relative px-6 py-20">
-      <div className="max-w-4xl mx-auto text-center">
-        <p className="text-muted-foreground font-sans text-sm tracking-[0.3em] uppercase mb-6 opacity-0 animate-fade-in">
-          Creative Developer & Designer
-        </p>
-        
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-medium leading-tight mb-8 opacity-0 animate-slide-up animation-delay-100">
-          Hello, I'm{" "}
-          <span className="text-gradient italic">Alexandra</span>
-        </h1>
-        
-        <p className="font-sans text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed opacity-0 animate-slide-up animation-delay-200">
-          I craft digital experiences that blend elegant design with thoughtful functionality. 
-          Based in San Francisco, working globally.
-        </p>
-        
-        <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-slide-up animation-delay-300">
+    <section className="min-h-screen flex flex-col justify-center items-center relative px-6 overflow-hidden">
+      {/* Ambient glow effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[150px] animate-glow-pulse"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ duration: 2, delay: 0.5 }}
+          className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px]"
+        />
+      </div>
+
+      {/* Grid overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)`,
+          backgroundSize: '60px 60px'
+        }}
+      />
+
+      <div className="max-w-5xl mx-auto text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass glass-border mb-8"
+        >
+          <Terminal className="w-4 h-4 text-primary" />
+          <span className="text-sm text-muted-foreground">Senior Software Engineer</span>
+          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] mb-8 tracking-tight"
+        >
+          Building{" "}
+          <span className="text-gradient">scalable</span>
+          <br />
+          systems that{" "}
+          <span className="text-gradient">matter</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12"
+        >
+          10+ years crafting enterprise solutions with Java Spring, Python FastAPI, 
+          and cloud-native architectures. Turning complex problems into elegant, 
+          maintainable code.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
           <a
             href="#about"
-            className="px-8 py-4 bg-gradient-warm text-primary-foreground font-sans font-medium rounded-full shadow-soft hover:shadow-elevated transition-all duration-300 hover:-translate-y-1"
+            className="group px-8 py-4 bg-gradient-primary text-primary-foreground font-medium rounded-full transition-all duration-300 hover:shadow-glow hover:scale-105"
           >
-            Discover My Story
+            Explore My Work
           </a>
           <a
             href="#contact"
-            className="px-8 py-4 border border-border text-foreground font-sans font-medium rounded-full hover:bg-secondary transition-all duration-300"
+            className="px-8 py-4 glass glass-border text-foreground font-medium rounded-full hover:bg-secondary/50 transition-all duration-300"
           >
             Get In Touch
           </a>
-        </div>
+        </motion.div>
+
+        {/* Tech stack floating badges */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          className="flex flex-wrap justify-center gap-3 mt-16"
+        >
+          {["Java", "Spring Boot", "Python", "FastAPI", "AWS", "Docker"].map((tech, index) => (
+            <motion.span
+              key={tech}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+              className="px-4 py-2 text-sm text-muted-foreground glass glass-border rounded-full"
+            >
+              {tech}
+            </motion.span>
+          ))}
+        </motion.div>
       </div>
-      
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in animation-delay-500">
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
         <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-          <span className="text-xs font-sans tracking-widest uppercase">Scroll</span>
-          <ArrowDown className="w-4 h-4 animate-bounce" />
+          <span className="text-xs tracking-widest uppercase">Scroll</span>
+          <ChevronDown className="w-5 h-5 animate-bounce" />
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 };
