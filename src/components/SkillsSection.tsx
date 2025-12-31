@@ -6,19 +6,19 @@ const skillCategories = [
   {
     title: "Backend Development",
     skills: [
-      { name: "Java / Spring Boot", level: 95 },
-      { name: "Python / FastAPI", level: 90 },
-      { name: "REST APIs & GraphQL", level: 92 },
-      { name: "Microservices", level: 88 },
+      { name: "Java / Spring", level: 95 },
+      { name: "Python / FastAPI", level: 92 },
+      { name: "Software Architecture", level: 90 },
+      { name: "Microservices", level: 92 },
     ],
   },
   {
-    title: "Cloud & DevOps",
+    title: "Infrastructure & Data",
     skills: [
-      { name: "AWS (EC2, Lambda, S3)", level: 90 },
-      { name: "Docker & Kubernetes", level: 85 },
-      { name: "CI/CD Pipelines", level: 88 },
-      { name: "Terraform / IaC", level: 80 },
+      { name: "PostgreSQL", level: 90 },
+      { name: "AWS (EC2, Lambda, S3)", level: 88 },
+      { name: "Docker & Containers", level: 90 },
+      { name: "Linux Administration", level: 88 },
     ],
   },
 ];
@@ -30,16 +30,14 @@ const technologies = [
   { name: "Python", category: "Language" },
   { name: "FastAPI", category: "Framework" },
   { name: "PostgreSQL", category: "Database" },
-  { name: "MongoDB", category: "Database" },
-  { name: "Redis", category: "Cache" },
-  { name: "Kafka", category: "Messaging" },
-  { name: "RabbitMQ", category: "Messaging" },
-  { name: "Docker", category: "DevOps" },
-  { name: "Kubernetes", category: "DevOps" },
+  { name: "Linux", category: "OS" },
+  { name: "Docker", category: "Container" },
   { name: "AWS", category: "Cloud" },
-  { name: "Jenkins", category: "CI/CD" },
-  { name: "GitHub Actions", category: "CI/CD" },
-  { name: "Terraform", category: "IaC" },
+  { name: "Microservices", category: "Architecture" },
+  { name: "REST APIs", category: "API" },
+  { name: "Software Architecture", category: "Design" },
+  { name: "Git", category: "VCS" },
+  { name: "CI/CD", category: "DevOps" },
 ];
 
 const SkillsSection = () => {
