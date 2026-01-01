@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Code2, Cloud, Database, Building2 } from "lucide-react";
-import profileImage from "@/assets/radek-profile.jpg";
+import profileImage from "@/assets/radek-about.jpg";
 
 const AboutSection = () => {
   const ref = useRef(null);

@@ -8,12 +8,12 @@ const ContactSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "radek.witek@example.com", href: "mailto:radek.witek@example.com" },
-    { icon: MapPin, label: "Location", value: "Available Worldwide", href: "#" },
+    { icon: Mail, label: "Email", value: "radoslawwitek@gmail.com", href: "mailto:radoslawwitek@gmail.com" },
+    { icon: MapPin, label: "Location", value: "Kraków, Poland · Open to Remote", href: "#" },
   ];
 
   const socials = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
+    { icon: Github, href: "https://github.com/solaufein", label: "GitHub" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/rados%C5%82aw-witek-a2a5b797/", label: "LinkedIn" },
   ];
 
@@ -71,7 +71,7 @@ const ContactSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:radoslawwitek@gmail.com"
             className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-primary text-primary-foreground font-medium rounded-full transition-all duration-300 hover:shadow-glow hover:scale-105 text-lg"
           >
             Start a Conversation
