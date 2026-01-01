@@ -31,11 +31,12 @@ const AboutSection = () => {
             <div className="aspect-square rounded-3xl glass glass-border p-8 relative overflow-hidden">
               {/* Profile Image */}
               <div className="absolute inset-0 flex items-center justify-center p-8">
-                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden bg-secondary/10">
                   <img 
                     src={profileImage} 
-                    alt="Radek Witek" 
-                    className="w-full h-full object-cover"
+                    alt="Radek Witek portrait photo" 
+                    className="w-full h-full object-contain object-center"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                 </div>
