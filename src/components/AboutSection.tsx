@@ -9,7 +9,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const highlights = [
-    { icon: Code2, value: "10+", label: "Years Experience" },
+    { icon: Code2, value: "13+", label: "Years Experience" },
     { icon: Building2, value: "GE", label: "Healthcare" },
     { icon: Cloud, value: "AWS", label: "Cloud Expert" },
     { icon: Database, value: "100M+", label: "Records Processed" },

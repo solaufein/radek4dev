@@ -80,7 +80,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12"
         >
-          10+ years crafting enterprise solutions with Java Spring, Python FastAPI, 
+          13+ years crafting enterprise solutions with Java Spring, Python FastAPI, 
           and cloud-native architectures. Previously at Motorola Solutions. Turning complex 
           problems into elegant, maintainable code.
         </motion.p>
