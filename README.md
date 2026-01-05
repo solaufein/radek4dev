@@ -1,6 +1,8 @@
-# Welcome to your project
+# Portfolio
 
-**Use your preferred IDE**
+https://solaufein.github.io/radek4dev/
+
+## Build & Install
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
